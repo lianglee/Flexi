@@ -12,7 +12,8 @@ $(document).ready(function() {
 				$href = $(this).attr('href');
 				$text = $(this).text();
 				$(this).parent().attr('title', $text);
-				$(this).parent().attr('data-href', $href);
+				//Sidebar links isn't working as its not actually type of 'a' #4
+				$(this).parent().attr('data-href-flexi', $href);
 				$(this).parent().tooltip();
 	});
 	$(document).on('click', '#sidebar-toggle', function() {
@@ -72,6 +73,17 @@ $(document).ready(function() {
 		$('#sidebar-toggle').click();
 		$('#sidebar-toggle').click();
 	}
+	//Sidebar links isn't working as its not actually type of 'a' #4
+	$("body").on('click', '.sidebar-menu .menu-content .sub-menu li', function(e){
+			e.stopPropagation();
+			$data = $(this).attr('data-href-flexi');
+			if(e.target !== e.currentTarget) return;
+			if($data == 'javascript:void(0);'){
+					$(this).find('a').click();
+			} else {
+					window.location = $data;
+			}	
+	});
 });
 $(window).load(function() {
 	   $(".ossn-page-loading-annimation").fadeOut("slow");
