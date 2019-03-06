@@ -2637,6 +2637,10 @@ footer .ossn-footer-menu a:last-child::after {
 .menu-section-item-groups:before {
 	content: "\f07b" !important
 }
+.menu-section-categories i:before {
+       font-family: FontAwesome;
+	content: "\f00b" !important
+}
 .topbar-search input{
     background-color: #494c62;
     border: 0;
