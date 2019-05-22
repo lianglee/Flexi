@@ -7,11 +7,11 @@
 				</div>
 				<?php } ?>
 	<div class="container-fluid">
-  		<div class="col-md-3 hidden-xs site-name <?php echo $hide_loggedin;?>">
+  		<div class="col-md-3 col-sm-4 hidden-xs site-name <?php echo $hide_loggedin;?>">
 				<span><a href="<?php echo ossn_site_url();?>"><?php echo ossn_site_settings('site_name');?></a></span>
 		</div>  	
         <?php if(ossn_isLoggedin()){ ?>
-		<div class="col-md-5 hidden-xs">
+		<div class="col-md-5 hidden-xs hidden-sm">
         	<div class="topbar-search">
             	<form method="get" action="<?php echo ossn_site_url("search");?>">
                 <input type="text" name="q" placeholder="<?php echo ossn_print('ossn:search');?>" onblur="if (this.value=='') { this.value=Ossn.Print('ossn:search'); }" onFocus="if (this.value==Ossn.Print('ossn:search')) { this.value='' };"/>
@@ -20,7 +20,7 @@
         </div>
         <?php } ?>
         
- 			<div class="col-md-3 text-right right-side">
+ 			<div class="col-md-3 col-sm-6 text-right right-side">
 				<div class="topbar-menu-right">
 					<ul>
 					<li class="ossn-topbar-dropdown-menu">

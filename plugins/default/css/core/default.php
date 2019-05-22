@@ -922,7 +922,10 @@ a {
 .sidebar-menu-nav li .sub-menu li {
     line-height: 40px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+	.topbar .site-name a {
+    	font-size: 2.1vw;
+    }
 	.sidebar {
     	margin-left:-200px;
     }
@@ -2637,17 +2640,13 @@ footer .ossn-footer-menu a:last-child::after {
 .menu-section-item-groups:before {
 	content: "\f07b" !important
 }
-.menu-section-categories i:before {
-       font-family: FontAwesome;
-	content: "\f00b" !important
-}
 .topbar-search input{
     background-color: #494c62;
     border: 0;
     padding: 10px;
     height: 70px;
     width: 100%;
-
+    color:#fff;
 }
 
 .com-members-memberlist-item img {

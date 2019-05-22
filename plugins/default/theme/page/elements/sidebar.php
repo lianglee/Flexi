@@ -13,7 +13,7 @@
             		}
 					echo ossn_view_form('search', array(
 								'component' => 'OssnSearch',
-								'class' => 'ossn-search visible-xs visible',
+								'class' => 'ossn-search visible-xs visible-sm visible',
 								'autocomplete' => 'off',
 								'method' => 'get',
 								'security_tokens' => false,
