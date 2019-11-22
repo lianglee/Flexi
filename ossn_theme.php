@@ -31,8 +31,11 @@ function ossn_goblue_theme_init(){
 	ossn_extend_view('ossn/site/head', 'ossn_goblue_head');
     ossn_extend_view('js/opensource.socialnetwork', 'js/goblue');	
 	
-	ossn_add_hook('newsfeed', 'sidebar:right', 'flexi_latest_members_widget');
-	ossn_add_hook('newsfeed', 'sidebar:right', 'flexi_latest_friends_widget');	
+	//Sanitizing of latest friends widget #6
+	if(ossn_isLoggedin()){
+		ossn_add_hook('newsfeed', 'sidebar:right', 'flexi_latest_members_widget');
+		ossn_add_hook('newsfeed', 'sidebar:right', 'flexi_latest_friends_widget');	
+	}
 }
 function flexi_latest_members_widget($hook, $type, $return){
 	$widget_content = ossn_plugin_view('flexi/members_widget');

@@ -7,7 +7,7 @@
 				</div>
 				<?php } ?>
 	<div class="container-fluid">
-  		<div class="col-md-3 col-sm-4 hidden-xs site-name <?php echo $hide_loggedin;?>">
+  		<div class="col-md-2 col-sm-4 col-lg-3 hidden-xs site-name <?php echo $hide_loggedin;?>">
 				<span><a href="<?php echo ossn_site_url();?>"><?php echo ossn_site_settings('site_name');?></a></span>
 		</div>  	
         <?php if(ossn_isLoggedin()){ ?>
@@ -20,7 +20,7 @@
         </div>
         <?php } ?>
         
- 			<div class="col-md-3 col-sm-6 text-right right-side">
+ 			<div class="col-md-4 col-lg-3 col-sm-6 text-right right-side">
 				<div class="topbar-menu-right">
 					<ul>
 					<li class="ossn-topbar-dropdown-menu">

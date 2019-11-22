@@ -5,11 +5,11 @@
     <author>Core Team</author>
     <author_url>http://www.softlab24.com/</author_url>	
     <description>A responsive theme for Ossn.</description>
-    <license>OSSN License v3 </license>    
+    <license>OSSN License v3</license>    
     <license_url>http://www.opensource-socialnetwork.org/licence</license_url>
-    <version>1.3</version>
+    <version>1.5</version>
 	<requires>
 		<type>ossn_version</type>
-		<version>4.6</version>
+		<version>5.0</version>
 	</requires>
 </theme>
