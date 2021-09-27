@@ -29,29 +29,61 @@ body {
 	background-color: #aaa;
 }
 
+.ossn-form input[type='number'],
+.ossn-form input[type='email'],
 .ossn-form input[type='password'],
 .ossn-form text,
 .ossn-form select,
 .ossn-form textarea,
 .ossn-form input[type='text'] {
 	width: 100%;
-	border: 1px solid #eee;
-	padding: 10px;
+	background-color: #f9f9f9;
+	border: 1px solid #ccd0d5;
+	padding: 8px;
 	margin-bottom: 5px;
 	outline: none;
 	display: block;
 	resize: vertical;
+	border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: none;
+	-webkit-box-shadow: none
 }
 
-.ossn-form input[type='submit'] {
-	margin-top: 5px;
-	margin-bottom: 5px;
+.ossn-form input[type='number']:focus,
+.ossn-form input[type='email']:focus,
+.ossn-form input[type='password']:focus,
+.ossn-form text:focus,
+.ossn-form select:focus,
+.ossn-form textarea:focus,
+.ossn-form input[type='text']:focus {
+	outline: none;
 }
 
+.ossn-form input[readonly],
+.ossn-form input[readonly],
+.ossn-form input[readonly],
+.ossn-form select[readonly],
+.ossn-form textarea[readonly],
+.ossn-form input[readonly] {
+	background: #dbdbdb;
+}
+.ossn-form input[type="file"] {
+	display:block;
+}
+.btn:focus,
+.btn:active {
+	outline: none !important;
+}
 .ossn-red-borders {
 	border: 1px solid #a94442 !important;
 }
-
+.ossn-form-group-half {
+    display: inline-block;
+    width: calc(50% - 2px);
+    float: left;
+    box-sizing: border-box;
+}
 .fa {
 	margin-right: 5px;
 }
@@ -77,6 +109,42 @@ p {
 .center-row {
 	display: table-cell;
 	text-align: center;
+}
+.ossn-form input[type=radio] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	display: inline-block;
+	position: relative;
+	background-color: #ececec;
+	color: #666;
+	top: 5px;
+	height: 20px;
+	width: 20px;
+	border: 0;
+	border-radius: 50px;
+	cursor: pointer;
+	margin-right: 7px;
+	outline: none;
+}
+
+.ossn-form input[type=radio]:checked::before {
+	position: absolute;
+	font: 9px/1 'Open Sans', sans-serif;
+	left: 7px;
+	top: 5px;
+	content: '\02143';
+	transform: rotate(40deg);
+}
+
+.ossn-form input[type=radio]:hover {
+	background-color: #f7f7f7;
+}
+
+.ossn-form input[type=radio]:checked {
+	background-color: #3f4257;
+	color: #fff;
+	font-weight: bold;
 }
 
 .radio-block {
@@ -389,12 +457,14 @@ a {
 .ossn-wall-items {}
 
 .ossn-wall-item {
-	padding: 30px;
+	padding: 15px;
 	padding-top: 10px;
 	border: 1px solid #eee;
 	margin-top: 20px;
 	background-color: #fff;
 	padding-bottom: 0px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
 .ossn-wall-item:first-child {
@@ -421,7 +491,6 @@ a {
 .ossn-wall-item .meta {}
 
 .ossn-wall-item .meta .user {
-	display: inline-block;
 	margin-top: 3px;
 }
 
@@ -454,37 +523,51 @@ a {
 	float: right;
 }
 
+.ossn-wall-item .meta .post-menu .btn-link {
+	font-size: 14px;
+}
+
 .ossn-wall-container {
-    margin-bottom: 10px;
+	border-radius: 2px;
+	margin-top: -5px;
+	margin-bottom: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 }
 
 .ossn-wall-container textarea {
 	padding: 10px;
 	width: 100%;
 	border: 1px solid;
-	border-color: #E5E6E9 #DFE0E4;
-	border-bottom: 0px;
+	border: 0;
 	border-top: 0px;
 	resize: none;
 	outline: none;
+	background: #fff;
+	border-radius: 0;
+	font-size: 15px;
+	resize: vertical;
+	margin-left: 0;
 }
 
 .ossn-wall-container .controls {
 	background-color: #F6F7F8;
-	border-bottom: 1px solid #E9EAED;
-	border-left: 1px solid #E9EAED;
-	border-right: 1px solid #E9EAED;
-	height: 40px;
-	width: 100%;
-	margin-top: 3px;
-	margin-top: -5px;
-	padding-right: 10px;
+	margin-top: 5px;
+	border: 1px solid #E9EAED;
+	padding: 5px 10px;
+	margin-left: -10px;
+	margin-right: -10px;
+	border-left: 0;
+	border-right: 0;
 }
 
 .ossn-wall-container .wall-tabs {
 	border-bottom: 1px solid #E5E5E5;
 	background-color: #F6F7F8;
 	border: 1px solid #E9EAED;
+	margin-top: 5px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 }
 
 .ossn-wall-container .wall-tabs .item {
@@ -515,51 +598,114 @@ a {
 .ossn-wall-container .tabs-input {}
 
 .ossn-wall-container .controls li {
-	padding: 10px;
+	padding: 7px;
+	background: #e5e5e5e0;
 	display: inline-block;
+	border-radius: 50%;
 	cursor: pointer;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+}
+
+.ossn-wall-container .controls .ossn-wall-friend,
+.ossn-wall-container .controls .ossn-wall-location,
+.ossn-wall-container .controls .ossn-wall-photo,
+.ossn-wall-container-control-menu-emojii-selector {
+	color: #5d5d5d;
 }
 
 .ossn-wall-container .controls li:hover {
-	background: #eee;
+	background: #fff;
 }
 
-.ossn-wall-privacy {
+.ossn-wall-post-button-container {
+	display: inline-table;
 	float: right;
+}
+.ossn-wall-privacy-dummy,
+.ossn-wall-privacy {
 	margin-right: 5px;
+	padding: 5px 10px;
+	background: #e5e5e5e0;
+	border-radius: 10px;
+	cursor: pointer;
+	display: inline-block;
+	margin-top: 10px;
+}
+.ossn-wall-privacy-dummy {
+    background: #e5e5e5e0;
+    cursor:initial;
+    opacity: 0.5;
+}
+.ossn-wall-privacy:hover {
+	background: #eeeeee8c;
+}
+.ossn-wall-privacy-dummy span > span,
+.ossn-wall-privacy span>span {
+	margin-left: 5px;
+	float: right;
 }
 
 .ossn-wall-container input[type='submit'] {
 	padding: 3px 20px;
-	display: block;
 	margin-top: 6px;
+	margin: 10px auto;
+	border-radius: 5px;
 }
 
 .ossn-wall-container i {
 	font-size: 15px;
+	margin-right: 0;
 }
 
-.ossn-wall-container input[type="file"] {
-	border-left: 1px solid #EEE;
-	border-right: 1px solid #EEE;
+.ossn-wall-container-data {
+	background: #fff;
+	padding: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: 1px solid #E5E5E5;
+	border-bottom-color: #ccc;
+	border-width: 0 1px 2px 1px;
+}
+
+#ossn-wall-photo {
+	margin-top: 10px;
 }
 
 .ossn-wall-container input[type="file"],
 .ossn-wall-container input[type="text"] {
 	width: 100%;
-	border-top: 1px dashed #EEE;
+	border-top: 1px dashed #E9EAED;
 	padding: 5px;
 	margin-bottom: 5px;
 	margin-top: -5px;
 	outline: none;
 }
 
+.ossn-wall-container input[type="file"] {
+	border: 1px solid #E9EAED;
+	border-radius: 10px;
+	background: #fff;
+}
+
 #token-input-ossn-wall-friend-input {
 	width: 100% !important;
-	border-top: 1px dashed #EEE;
 	padding: 7px;
 	margin-bottom: 5px;
 	margin-top: -5px;
+	background: #fff;
+	border: 0;
+}
+
+#ossn-wall-location-input {
+	background: #fff;
+	border: 1px solid #E9EAED;
+	border-radius: 10px;
+}
+
+#ossn-wall-location .ap-input-icon svg {
+	top: 15px
 }
 
 #ossn-wall-form .ossn-loading {
@@ -581,11 +727,12 @@ a {
 
 .ossn-comment-menu {
 	float: right;
-	display: none;
+	margin-left: 10px;
 }
 
 .comments-item:hover .ossn-comment-menu {
 	display: block;
+	margin-left: 10px;
 }
 
 .comments-likes {
@@ -639,13 +786,20 @@ a {
 	border-radius: 32px;
 }
 
+
+/** UI improvements comments #1524 **/
+
 .comments-list .comments-item .comment-contents {
 	display: inline-block;
 	margin-top: -3px;
+	background-color: #ebedf0;
+	border-radius: 18px;
+	width: auto;
+	line-height: 16px;
+	padding: 6px 12px 7px 12px;
 }
 
 .comment-container {
-	padding-bottom: 10px;
 	position: relative;
 	z-index: 0;
 }
@@ -662,7 +816,7 @@ a {
 .comment-contents p {
 	margin: 0px;
 	word-break: break-word;
-	text-align: justify;
+	text-align: left;
 }
 
 .comment-contents p img {
@@ -687,16 +841,24 @@ a {
 	background: #eee;
 }
 
+.comments-item .comment-metadata {
+	margin-top: 5px;
+}
+
 .comment-box {
 	width: 100%;
 	border: 1px solid #eee;
-	padding: 5px 30px 5px 5px !important;
+	padding: 6px 65px 6px 12px;
 	margin-bottom: 5px;
 	outline: none;
 	display: block;
 	resize: vertical;
-	background: #fff;
 	min-height: 32px;
+	background-color: #f2f3f5;
+	border: 1px solid #ccd0d5;
+	border-radius: 15px;
+	word-break: break-word;
+	text-align: left;
 }
 
 [contentEditable=true]:empty:not(:focus)::before {
@@ -724,8 +886,6 @@ a {
 .ossn-total-likes {
 	margin-left: 10px;
 }
-
-
 /********************************
 	Global
 ***********************************/
@@ -842,17 +1002,19 @@ a {
 
 .sidebar-menu-nav ul:not(collapsed) .arrow:before,
 .sidebar-menu-nav li:not(collapsed) .arrow:before {
-	font-family: FontAwesome;
+	font-family: 'Font Awesome 5 Free';
 	content: "\f078";
 	display: inline-block;
 	padding-left: 10px;
 	padding-right: 10px;
 	vertical-align: middle;
+    font-weight:900;
 	float: right;
 }
 
 .sidebar-menu-nav ul .sub-menu li {
 	padding-left: 20px;
+    font-weight:900;
 }
 
 .sidebar-menu-nav ul .sub-menu li,
@@ -870,14 +1032,16 @@ a {
 
 .sidebar-menu-nav ul .sub-menu li:before,
 .sidebar-menu-nav li .sub-menu li:before {
-	font-family: FontAwesome;
+	font-family: 'Font Awesome 5 Free';
 	content: "\f105";
 	display: inline-block;
 	padding-left: 10px;
 	padding-right: 10px;
 	vertical-align: middle;
 }
-
+.sidebar a {
+    color: #fff;
+}
 .sidebar-menu-nav li {
 	padding-left: 0px;
 	border-bottom: 1px solid #23282e;
@@ -909,7 +1073,7 @@ a {
 .sidebar-close .newseed-uinfo .name {
 	display:none;
 }
-.sidebar-close .sub-menu a{
+.sidebar-close .sub-menu .text {
 	display:none;
 }
 .sidebar-close .sidebar-menu-nav li a .text {
@@ -1043,11 +1207,15 @@ a {
 /******************************************
 	Ossn Ads
 *******************************************/
-
+.ad-image-container {
+    background: #f6f7f8;
+    padding: 5px;
+    border: 1px solid #ebebeb;
+}
 .ossn-ad-item {}
 
 .ossn-ad-item .ad-image {
-	max-width: 100%;
+	max-width: 200px;
 	margin: 0 auto;
 	display: block;
 }
@@ -1106,9 +1274,35 @@ a {
 	Ossn Notifications
 ***************************************/
 
+.ossn-notifications-box .collapsing {
+	-webkit-transition: none;
+	transition: none;
+	display: none;
+}
+
 .ossn-notifications-box {
 	width: 430px;
 	color: #000;
+	position: absolute;
+	top: 100%;
+	right: 20px;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 160px;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	font-size: 14px;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, .15);
+	border-radius: 4px;
+	-webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+	box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
 }
 
 .ossn-notifications-box .notificaton-item {
@@ -1251,9 +1445,12 @@ a {
 	display: inline-table;
 	float: left;
 }
-
+.ossn-notifications-friends-inner a {
+    color: #0f3b4a !important;
+    display: inline-block !important;
+}
 .ossn-notifications-friends-inner {
-	padding: 6px;
+	padding: 0px 5px;
 }
 
 .ossn-notifications-friends-inner form {
@@ -1265,7 +1462,6 @@ a {
 }
 
 .notification-friends li {
-	margin-bottom: 5px;
 	width: 100%;
 	border-bottom: 1px solid #eee;
 }
@@ -1280,12 +1476,19 @@ a {
 	text-overflow: ellipsis;
 }
 
+
 .ossn-notifications-friends-inner .controls {
 	float: right;
 	margin-top: 6px;
 	display: inline-block;
 }
-
+.friends-added-text {
+    float: left !important;
+    margin-top: -18px !important;
+    display: block !important;
+    margin-left: 10px;
+    font-size: 13px;
+}
 .ossn-notifications-friends-inner .btn {
 	padding: 3px 9px;
 	border-radius: 1px;
@@ -1607,7 +1810,7 @@ a {
 }
 
 .ossn-menu-search-users .text:before {
-	font-family: FontAwesome;
+	font-family: 'Font Awesome 5 Free';
 	content: "\f007";
 	display: absolute;
 	padding-right: 10px;
@@ -1616,7 +1819,7 @@ a {
 }
 
 .ossn-menu-search-groups .text:before {
-	font-family: FontAwesome;
+	font-family: 'Font Awesome 5 Free';
 	content: "\f0c0";
 	display: absolute;
 	padding-right: 10px;
@@ -2630,7 +2833,7 @@ footer .ossn-footer-menu a:last-child::after {
 ******************************************************/
 
 .sidebar-menu-nav ul .sub-menu li:before {
-	font-family: FontAwesome;
+	font-family: 'Font Awesome 5 Free';
 	display: inline-block;
 	padding-left: 10px;
 	padding-right: 10px;

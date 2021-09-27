@@ -18,7 +18,7 @@
 								'method' => 'get',
 								'security_tokens' => false,
 								'action' => ossn_site_url("search"),
-					), false); 
+					), false);
            		 ?>                
             </div>
         </div>

@@ -1,3 +1,7 @@
+# Flexi 2.0
+
+* Fixed for OSSN 6.0
+
 # Flexi 1.5
 
 * Issue when trying to view a post while not being logged in #9

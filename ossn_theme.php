@@ -61,10 +61,10 @@ function ossn_goblue_head(){
 	$head	 = array();
 	
 	$head[]  = ossn_html_css(array(
-					'href' => '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+					'href' => '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
 			  ));	
 	$head[]  = ossn_html_css(array(
-					'href' =>  'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700'
+					'href' =>  'https://fonts.googleapis.com/css?family=PT+Sans:400italic,700,400'
 			  ));		
 	$head[]  = ossn_html_js(array(
 					'src' => ossn_theme_url() . 'vendors/bootstrap/js/bootstrap.min.js'
@@ -77,7 +77,7 @@ function ossn_goblue_head(){
 function ossn_goblue_admin_head(){
 	$head	 = array();	
 	$head[]  = ossn_html_css(array(
-					'href' => '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+					'href' => '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
 			  ));	
 	$head[]  = ossn_html_css(array(
 					'href' =>  '//fonts.googleapis.com/css?family=Roboto+Slab:300,700,400'

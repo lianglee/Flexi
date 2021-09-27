@@ -2,9 +2,9 @@
 /**
  * Open Source Social Network
  *
- * @package   (softlab24.com).ossn
- * @author    OSSN Core Team <info@softlab24.com>
- * @copyright (C) SOFTLAB24 LIMITED
+ * @package   (openteknik.com).ossn
+ * @author    OSSN Core Team <info@openteknik.com>
+ * @copyright (C) OpenTeknik LLC
  * @license   Open Source Social Network License (OSSN LICENSE)  http://www.opensource-socialnetwork.org/licence
  * @link      https://www.opensource-socialnetwork.org/
  */
@@ -44,25 +44,40 @@ if (isset($params['contents'])) {
             convert_urls: false,
             relative_urls: false,
             language: "<?php echo ossn_site_settings('language'); ?>",
+		content_css: Ossn.site_url + 'css/view/bootstrap.min.css'
         });
     </script>
 
 </head>
 <body>
+	<div class="ossn-page-loading-annimation">
+    		<div class="ossn-page-loading-annimation-inner">
+            	<div class="ossn-loading"></div>
+            </div>
+    </div>
+
+	<div class="ossn-halt ossn-light"></div>
+	<div class="ossn-message-box"></div>
+	<div class="ossn-viewer" style="display:none"></div>
+    
 	<div class="header">
     	<div class="container">
         
         	<div class="row">
 			<div class="col-md-6 col-sm-6 col-xs-6">
+            			<?php if(ossn_site_settings('cache') == true){?>
             			<img src="<?php echo ossn_theme_url(); ?>images/logo_admin.jpg"/>
+                        <?php } else { ?>
+            			<img src="<?php echo ossn_theme_url(); ?>images/logo_admin.jpg?ver=<?php echo time();?>"/>                        
+                        <?php } ?> 
             		</div>
                 <?php if(ossn_isAdminLoggedin()){ ?>
             	<div class="col-md-6 col-sm-6 col-xs-6 header-dropdown">
 					<ul class="navbar-right">	
                         <div class="dropdown">
-                        	<a id="dLabel" role="button" data-toggle="dropdown" data-target="#"><i class="fa fa-bars fa-3"></i></a> 
+                        	<a id="dLabel" role="button" data-bs-toggle="dropdown" data-bs-target="#"><i class="fa fa-bars fa-3"></i></a> 
     						<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-             					 <li><a href="<?php echo ossn_site_url("action/admin/logout", true);?>"><?php echo ossn_print('admin:logout');?></a></li>
+             					 <li><a class="dropdown-item" href="<?php echo ossn_site_url("action/admin/logout", true);?>"><?php echo ossn_print('admin:logout');?></a></li>
            					 </ul>
       		    		</div>
                      </ul>   
@@ -73,11 +88,9 @@ if (isset($params['contents'])) {
         </div>
     </div>
     <?php if(ossn_isAdminLoggedin()){ ?>
-    <div class="row no-right-margins">
 		<div class="topbar-menu">
     	  <?php echo ossn_view_menu('topbar_admin'); ?>
     	</div>
-    </div>    
     <?php } ?>
 	<div class="container">
     	<div class="row">
@@ -93,6 +106,7 @@ if (isset($params['contents'])) {
  				<?php echo ossn_print('copyright'); ?> <?php echo date("Y"); ?> <a href="<?php echo ossn_site_url(); ?>"><?php echo $site_name; ?></a>            			
            	 	</div>
                 <div class="col-md-6 text-right">
+                	 <?php echo 'POWERED <a href="http://www.opensource-socialnetwork.org">OPEN SOURCE SOCIAL NETWORK</a>'; ?>
                 </div>
         	</div>
         </footer>

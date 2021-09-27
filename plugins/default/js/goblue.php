@@ -4,18 +4,18 @@ $(document).ready(function() {
 		placement:'left',										  
 	}); 
 	//duplicate tooltips in opened left menu #5
-	$('.sidebar [data-toggle="collapse"]').each(function(){
+	$('.sidebar .collapse a > li > .text').each(function(){
 				$text = $(this).text();
-				$(this).attr('title', $text);
-				$(this).tooltip();
+				$(this).parent().attr('title', $text);
+				$(this).parent().tooltip();
 	});
 	$('.sidebar .sub-menu a').each(function(){				  
 				$href = $(this).attr('href');
 				$text = $(this).text();
 				$(this).parent().attr('title', $text);
 				//Sidebar links isn't working as its not actually type of 'a' #4
-				$(this).parent().attr('data-href-flexi', $href);
-				$(this).parent().tooltip();
+				$(this).attr('data-href-flexi', $href);
+				$(this).tooltip();
 	});
 	//same as $FlexiSidebarToggle only revert toogle == 0, toogel = 1 (if)
 	$FlexiSidebarToggleRotate = function(){

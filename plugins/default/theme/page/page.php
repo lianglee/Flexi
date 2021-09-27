@@ -2,9 +2,9 @@
 /**
  * Open Source Social Network
  *
- * @package   (softlab24.com).ossn
- * @author    OSSN Core Team <info@softlab24.com>
- * @copyright (C) SOFTLAB24 LIMITED
+ * @package   (openteknik.com).ossn
+ * @author    OSSN Core Team <info@openteknik.com>
+ * @copyright (C) OpenTeknik LLC
  * @license   Open Source Social Network License (OSSN LICENSE)  http://www.opensource-socialnetwork.org/licence
  * @link      https://www.opensource-socialnetwork.org/
  */
@@ -57,6 +57,7 @@ if (isset($params['contents'])) {
           </div>    
 		</div>
     </div>
+    <div id="theme-config" class="hidden" data-desktop-cover-height="200" data-minimum-cover-image-width="1040"></div>	
     <?php echo ossn_fetch_extend_views('ossn/page/footer'); ?>           
 </body>
 </html>
