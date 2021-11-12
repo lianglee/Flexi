@@ -84,9 +84,15 @@ body {
     float: left;
     box-sizing: border-box;
 }
-.fa {
+.fa,
+.fas,
+.far,
+.fal,
+.fad,
+.fab {
 	margin-right: 5px;
 }
+
 
 .ossn-hidden {
 	display: none;

@@ -126,7 +126,7 @@ $(document).ready(function() {
 	//Sidebar links isn't working as its not actually type of 'a' #4
 	$("body").on('click', '.sidebar-menu .menu-content .sub-menu li', function(e){
 			e.stopPropagation();
-			$data = $(this).attr('data-href-flexi');
+			$data = $(this).parent().attr('data-href-flexi');
 			if(e.target !== e.currentTarget) return;
 			if($data == 'javascript:void(0);'){
 					$(this).find('a').click();
