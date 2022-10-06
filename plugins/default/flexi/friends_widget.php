@@ -8,10 +8,10 @@
  * @license   Open Source Social Network License (OSSN LICENSE)  http://www.opensource-socialnetwork.org/licence
  * @link      https://www.opensource-socialnetwork.org/
  */
-
+//https://github.com/opensource-socialnetwork/opensource-socialnetwork/issues/2149#issuecomment-1179688041
 $attr = array(
 	'limit' => 12,
-	'order_by' => 'r.relation_id DESC'
+	'order_by' => 'r1.relation_id DESC'
 );
 $friends = ossn_loggedin_user()->getFriends('', $attr);
 
