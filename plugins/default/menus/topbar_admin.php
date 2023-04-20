@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-default navbar-admin-second" role="navigation">
     <div class="container">
-   				 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-     					 <span class="navbar-toggler-icon"></span>
-   				 </button>
-        		<div class="collapse navbar-collapse" id="navigationbar">
+   			 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" >
+     			 <i class="fa fa-bars"></i>
+   			 </button>
+        		<div class="collapse navbar-collapse" id="navbarNav">
             		<ul class="nav navbar-nav">
             			<?php
 							foreach ($params['menu'] as $key => $links) {
@@ -22,7 +22,6 @@
 												  } 
 												 unset($item['name']);
 												 unset($item['parent']);
-												 $item['text'] = ossn_print($item['text']);
 												 $item['class'] = 'dropdown-item '.$item['class'];
 												 $link = ossn_plugin_view('output/url', $item);
            										 $menu_parent .= '<li>'.$link.'</li>';
@@ -39,7 +38,6 @@
 												  $item['class'] = $class; 
 										} 
 										unset($item['name']);										
-										$item['text'] = ossn_print($item['text']);
 										$item['class'] = 'nav-link '.$item['class'];
 										$link = ossn_plugin_view('output/url', $item);										
             							$menu = '<li class="nav-item">'.$link.'</li>';
